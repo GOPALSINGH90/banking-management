@@ -9,11 +9,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity(name = "transactions")
-public class Transation {
+public class Transaction {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private Long id;
 	@Column(name = "type")
 	private String type;
 	
@@ -27,11 +27,12 @@ public class Transation {
 	@ManyToOne
 	private Account account;
 
-	public int getId() {
+	
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -69,7 +70,7 @@ public class Transation {
 
 	@Override
 	public String toString() {
-		return "Transation [id=" + id + ", type=" + type + ", amount=" + amount + ", description=" + description
+		return "Transaction [id=" + id + ", type=" + type + ", amount=" + amount + ", description=" + description
 				+ ", account=" + account + "]";
 	}
 
